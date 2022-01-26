@@ -18,6 +18,11 @@ app.post('/', async (req, res) => {
     res.json({"return" : "success"});
 });
 
-app.listen(3001, function(){
+let port = process.env.PORT;
+if(port == null || port == '' ) {
+    port = 3001;
+}
+
+app.listen(port, function(){
     console.log("server started on port 3001");
 });
