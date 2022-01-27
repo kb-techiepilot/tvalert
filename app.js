@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const axios = require('axios');
 
 const app = express();
-app.use(bodyParser.urlencoded({extended: true}));
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -16,7 +15,7 @@ app.get("/", function(req, res){
 
 app.post('/', jsonParser, async (req, res) => {
     console.log(req.body);
-    const gainers = await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id=-1001793121016&text='+req.body.text);
+    const gainers = await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id=-1001798508185&text='+req.body.text);
     res.json({"return" : "success"});
 });
 
