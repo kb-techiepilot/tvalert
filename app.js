@@ -7,7 +7,7 @@ const axios = require('axios');
 const app = express();
 
 const dstreetalertcheck = "-1001793121016";
-const dstreetlivechat = "--1001643333515";
+const dstreetlivechat = "-1001643333515";
 const tradingsignals = "-1001663177708";
 
 var jsonParser = bodyParser.json()
