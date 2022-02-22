@@ -19,10 +19,10 @@ app.get("/", function(req, res){
 
 app.post('/', jsonParser, async (req, res) => {
     console.log(req.body);
-    if(req.body.text !== undefined ) {
+    if(req.body.msg !== undefined ) {
         // await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ tradingsignals +'&text='+req.body.text);
-        await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ dstreetlivechat +'&text='+req.body.text);
-        await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ dstreetalertcheck +'&text='+req.body.text);
+        await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ dstreetlivechat +'&text='+req.body.msg);
+        await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ dstreetalertcheck +'&text='+req.body.msg);
         res.json({"return" : "success"});
     } else {
         res.json({"return" : "failiure"});
