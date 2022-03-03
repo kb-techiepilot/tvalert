@@ -8,7 +8,7 @@ const app = express();
 
 const dstreetalertcheck = "-1001793121016";
 const dstreetlivechat = "-1001643333515";
-const tradingsignals = "-1001663177708";
+const us30signals = "-1001754059003";
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -20,9 +20,18 @@ app.get("/", function(req, res){
 app.post('/', jsonParser, async (req, res) => {
     console.log(req.body);
     if(req.body.msg !== undefined ) {
-        // await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ tradingsignals +'&text='+req.body.text);
         await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ dstreetlivechat +'&text='+req.body.msg);
         await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ dstreetalertcheck +'&text='+req.body.msg);
+        res.json({"return" : "success"});
+    } else {
+        res.json({"return" : "failiure"});
+    }
+});
+
+app.post('/us30', jsonParser, async (req, res) => {
+    console.log(req.body);
+    if(req.body.msg !== undefined ) {
+        await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ us30signals +'&text='+req.body.msg);
         res.json({"return" : "success"});
     } else {
         res.json({"return" : "failiure"});
