@@ -38,8 +38,8 @@ app.post('/us30', urlencodedParser, async (req, res) => {
     }
 });
 
-app.post('/test', async (req, res) => {
-    console.log(req);
+app.post('/test', bodyParser.text({type: '*/*'}), async (req, res) => {
+    console.log(req.body);
 });
 
 let port = process.env.PORT;
