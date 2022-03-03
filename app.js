@@ -39,7 +39,7 @@ app.post('/us30', urlencodedParser, async (req, res) => {
 });
 
 app.post('/test', urlencodedParser, async (req, res) => {
-    console.log(req.body);
+    console.log(req);
 });
 
 let port = process.env.PORT;
