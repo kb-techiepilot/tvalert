@@ -38,7 +38,7 @@ app.post('/us30', urlencodedParser, async (req, res) => {
     }
 });
 
-app.post('/test', urlencodedParser, async (req, res) => {
+app.post('/test', async (req, res) => {
     console.log(req);
 });
 
