@@ -28,10 +28,10 @@ app.post('/', jsonParser, async (req, res) => {
     }
 });
 
-app.post('/us30', urlencodedParser, async (req, res) => {
+app.post('/us30', bodyParser.text({type: '*/*'}), async (req, res) => {
     console.log(req.body);
     if(req.body.msg !== undefined ) {
-        await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ us30signals +'&text='+req.body.msg);
+        await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ us30signals +'&text='+req.body);
         res.json({"return" : "success"});
     } else {
         res.json({"return" : "failiure"});
