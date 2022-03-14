@@ -17,7 +17,7 @@ app.get("/", function(req, res){
     res.send("welcome to backend server");
 });
 
-app.post('/', bodyParser.text({type: '*/*'}), async (req, res) => {
+app.post('/tvalert', bodyParser.text({type: '*/*'}), async (req, res) => {
     console.log(req.body);
     if(req.body !== undefined ) {
         // await axios.post('https://api.telegram.org/bot5007955067:AAGCvnc1AhD0Y11ukuM4zuuCKTb3obJVlwM/sendMessage?chat_id='+ dstreetlivechat +'&text='+req.body.msg);
