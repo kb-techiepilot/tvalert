@@ -21,6 +21,12 @@ app.post('/tos', bodyParser.text({type: '*/*'}), async (req, res) => {
         res.json({"return" : "success"});
 });
 
+app.get('/corntab', bodyParser.text({type: '*/*'}), async (req, res) => {
+    console.log(req.body);
+        await axios.post('https://api.telegram.org/bot5150570041:AAE3nCMT19DImKBaFFhq4ffLrBK7WR6kRZE/sendMessage?chat_id='+ tos +'&text='+req.body);
+        res.json({"return" : "success"});
+});
+
 app.post('/test', jsonParser, async (req, res) => {
     console.log(req.body);
 });
