@@ -7,6 +7,7 @@ const axios = require('axios');
 const app = express();
 
 const tos = "-1001609755951";
+const crude = "-1001661398407";
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -18,6 +19,12 @@ app.get("/", function(req, res){
 app.post('/tos', bodyParser.text({type: '*/*'}), async (req, res) => {
     console.log(req.body);
         await axios.post('https://api.telegram.org/bot5150570041:AAE3nCMT19DImKBaFFhq4ffLrBK7WR6kRZE/sendMessage?chat_id='+ tos +'&text='+req.body);
+        res.json({"return" : "success"});
+});
+
+app.post('/crude', bodyParser.text({type: '*/*'}), async (req, res) => {
+    console.log(req.body);
+        await axios.post('https://api.telegram.org/bot5150570041:AAE3nCMT19DImKBaFFhq4ffLrBK7WR6kRZE/sendMessage?chat_id='+ crude +'&text='+req.body);
         res.json({"return" : "success"});
 });
 
