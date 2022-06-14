@@ -22,7 +22,7 @@ app.post('/tos', bodyParser.text({type: '*/*'}), async (req, res) => {
         res.json({"return" : "success"});
 });
 
-app.post('/crude', bodyParser.text({type: '*/*'}), async (req, res) => {
+app.post('/alerts', bodyParser.text({type: '*/*'}), async (req, res) => {
     console.log(req.body);
         await axios.post('https://api.telegram.org/bot5150570041:AAE3nCMT19DImKBaFFhq4ffLrBK7WR6kRZE/sendMessage?chat_id='+ crude +'&text='+req.body);
         res.json({"return" : "success"});
